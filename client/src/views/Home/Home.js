@@ -4,7 +4,17 @@ import { Link } from 'react-router-dom';
 
 const Home = ({ categories, isLoading }) => (
     <section className="Home">
-        <h1></h1>
+        <div className="header">
+            <p className="title">#WinnersNeverStop</p>
+            <div className="burger">
+                <ul className="ul">
+                    <li className="li"></li>
+                    <li className="li"></li>
+                    <li className="li"></li>
+                    <li className="li"></li>
+                </ul>
+            </div>
+        </div>
     </section>
 );
 
