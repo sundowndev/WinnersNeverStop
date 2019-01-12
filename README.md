@@ -1,8 +1,6 @@
 # WinnersNeverStop
 
-Winners Never Stop est un projet de web documentaire destiné à étudier la place de l'esport en France, les législations et les formations qui se mettent en place. Dans ce web-documentaire, vous découvrirez les coulisses d’un sport qui se développe de plus en plus, et en particulier en France. Depuis plus de 10 ans, des événements e-sportifs sont organisés chaque année en France réunissant des milliers de joueurs sur différents jeux. Bien que l'activité physique ne soit pas comparable à celle des sports traditionnels, l'e-sport a été reconnue comme une discipline sportive à part entière grâce à l'entrainement mentale qu'elle nécessite. Ce documentaire à pour but de montrer l'envers du décors de cette discipline et comment elle évolue en France.
-
-----
+Winners Never Stop est un projet de web documentaire destiné à étudier la place de l'esport en France, les législations et les formations qui se mettent en place. Dans ce web-documentaire, vous découvrirez les coulisses d’un sport qui se développe de plus en plus, et en particulier en France. Depuis plus de 10 ans, des événements e-sportifs sont organisés chaque année en France réunissant des milliers de joueurs sur différents jeux. Bien que l'activité physique ne soit pas comparable à celle des sports traditionnels, l'e-sport a été reconnu comme une discipline sportive à part entière grâce à l'entrainement mental qu'elle nécessite. Ce documentaire à pour but de montrer l'envers du décors de cette discipline et comment elle évolue en France.
 
 ## Installation
 
