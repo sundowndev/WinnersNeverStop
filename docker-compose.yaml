@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: on-failure
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: WinnersNeverStop
+    ports:
+      - 3306:5432
+
+  adminer:
+    image: adminer
+    restart: on-failure
+    ports:
+      - 8080:8080
