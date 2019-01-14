@@ -15,7 +15,21 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
+const Chapter = use('App/Models/Chapter')
 
 Route.get('/', () => {
-  return { greeting: 'Hello world in JSON' }
+  return {
+    code: 200,
+    message: 'Hello world in JSON'
+  }
+})
+
+Route.get('/chapters', async () => {
+  const data = await Chapter.all();
+
+  return {
+    code: 200,
+    message: '',
+    data: data
+  }
 })
