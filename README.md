@@ -1,13 +1,41 @@
 # WinnersNeverStop
 
+La différence entre les gagnants et les perdants se voit à la grandeur face à la pression. Leur capacité à persévérer et ne jamais arrêter de s'entraîner. Découvrez les coulisses d’une discipline sportive qui se développe de plus en plus, et en particulier en France.
+
 Winners Never Stop est un projet de web documentaire destiné à étudier la place de l'esport en France, les législations et les formations qui se mettent en place. Dans ce web-documentaire, vous découvrirez les coulisses d’un sport qui se développe de plus en plus, et en particulier en France. Depuis plus de 10 ans, des événements e-sportifs sont organisés chaque année en France réunissant des milliers de joueurs sur différents jeux. Bien que l'activité physique ne soit pas comparable à celle des sports traditionnels, l'e-sport a été reconnu comme une discipline sportive à part entière grâce à l'entrainement mental qu'elle nécessite. Ce documentaire à pour but de montrer l'envers du décors de cette discipline et comment elle évolue en France.
+
+À l’heure où le domaine du sport électronique est en pleine expansion, des joueurs du monde entier s’entraînent chaque jour pour se dépasser et espérer arriver un jour au sommet de la scène professionnelle, regroupant les meilleurs joueurs du monde. Malgré le débat grandissant sur son association aux sports traditionnels, l’esport ne cesse de grandir et de se démocratiser chaque jour. Ce documentaire a pour but de montrer l’envers du décors de cette discipline et comment elle évolue en France.
+
+## Crédits
+
+#### Design & développement
+
+- Aymeline Chemin
+- Matthieu Blok
+- Mickael De jesus
+- Quentin Aimé
+- Raphael Cerveaux
+
+#### Articles & contenu vidéo
+
+- Raphael Cerveaux
+
+### Remerciements
+
+- [VaKarM](https://www.vakarm.net/)
+- [HLTV.org](https://www.hltv.org/)
+
+----
+
+# Web application
 
 ## Installation
 
 ~~~bash
 $ git clone git@github.com:sundowndev/WinnersNeverStop.git
-$ chmod +x bin/setup
-$ ./setup # developpment only
+# developpment only
+$ chmod +x scripts/setup
+$ ./scripts/setup
 ~~~
 
 ## Usage (Docker)
@@ -19,17 +47,8 @@ $ docker-compose up -d
 ## Usage
 
 ~~~bash
-# API
-$ cd server
-$ npm install
-$ npm i -g @adonisjs/cli
-$ adonis key:generate
-
-# Client
-$ cd ../client
-$ npm install
-$ npm run build
-$ npm start
+chmod +x ./scripts/setup
+./scripts/setup
 ~~~
 
 ## API usage
@@ -53,7 +72,7 @@ Authorization: <Access_token>
 
 ### Responses
 
-The response code will never be in the response. However, `success` key will always be present.
+Note: the HTTP response code will never be in the response.
 
 Validation error example:
 
@@ -77,11 +96,12 @@ Validation error example:
 }
 ~~~
 
+`success` key indicate if an error occured or not. It may not be present. In case of success.
+
 Getting object(s):
 
 ~~~json
 {
-    "success": true,
     "data": {
       "_id": "5bec2fed257ab94172cd3874",
       "firstname": "Raphael",
@@ -98,7 +118,6 @@ Handling arrays:
 
 ~~~json
 {
-    "success": true,
     "data": [
       {
         "_id": "5bec2fed257ab94172cd3874",
@@ -121,3 +140,5 @@ Handling arrays:
     ]
 }
 ~~~
+
+`data` key presence will indicate that the action succeeded and there's no error.
