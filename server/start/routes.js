@@ -17,19 +17,47 @@
 const Route = use('Route')
 const Chapter = use('App/Models/Chapter')
 
-Route.get('/', () => {
-  return {
-    code: 200,
-    message: 'Hello world in JSON'
-  }
+Route.get('/', ({ response }) => {
+  return response.send({
+    success: true,
+    message: 'Hello world.'
+  })
 })
 
-Route.get('/chapters', async () => {
-  const data = await Chapter.all();
+Route.get('/chapters', 'ChapterController.getAll')
 
-  return {
-    code: 200,
-    message: '',
-    data: data
-  }
-})
+Route.get('/chapters/:id', 'ChapterController.getOne').middleware('findOneChapterValidation')
+
+// Route.post('/chapters', async () => {
+//   const data = await Chapter.all();
+
+//   return {
+//     data: data
+//   }
+// })
+
+// Route.put('/chapters/:id', async ({ params }) => {
+//   const data = await Chapter.find(params.id);
+
+//   if (!data) {
+//     const response = {
+//       success: false,
+//       message: 'Item not found.',
+//     }
+//   }
+//   else {
+//     const response = {
+//       data: data,
+//     }
+//   }
+
+//   return response;
+// })
+
+// Route.delete('/chapters', async () => {
+//   const data = await Chapter.all();
+
+//   return {
+//     data: data
+//   }
+// })
