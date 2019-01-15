@@ -13,6 +13,7 @@ fi
 
 if ! [ -a server/package.json ]; then
     cd server
+    cp .env.example .env
     npm i -g @adonis/cli
     adonis install
 fi
