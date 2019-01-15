@@ -34,7 +34,7 @@ Winners Never Stop est un projet de web documentaire destiné à étudier la pla
 ~~~bash
 $ git clone git@github.com:sundowndev/WinnersNeverStop.git
 # developpment only
-$ chmod +x scripts/setup
+$ chmod +x scripts/*
 $ ./scripts/setup
 ~~~
 
@@ -46,9 +46,19 @@ $ docker-compose up -d
 
 ## Usage
 
+Start the client (port 8000)
+
 ~~~bash
-chmod +x ./scripts/setup
-./scripts/setup
+$ cd client
+$ npm run build
+$ npm start
+~~~
+
+Start the server (port 3000)
+
+~~~bash
+$ cd server
+$ node server.js
 ~~~
 
 ## API usage
