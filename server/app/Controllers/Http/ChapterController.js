@@ -1,5 +1,6 @@
 'use strict'
 
+const Database = use('Database')
 const Chapter = use('App/Models/Chapter')
 
 class ChapterController {
@@ -26,9 +27,31 @@ class ChapterController {
         })
     }
 
-    async create({ response, request }) {
+    async create({ request, response }) {
+        const [ chapterId ] = await Database
+            .insert(request.body)
+            .into('chapters')
+            .returning('id')
+
+        const chapter = await Chapter.find(chapterId);
+
         return response.send({
-            data: request.body
+            success: true,
+            data: chapter
+        });
+    }
+
+    async edit({ request, response, params }) {
+        return response.send({
+            success: true,
+            data: {}
+        });
+    }
+
+    async delete({ request, response, params }) {
+        return response.send({
+            success: true,
+            data: {}
         });
     }
 }
