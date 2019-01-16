@@ -1,19 +1,90 @@
 .Home {
     height: 100vh;
-    background: #040528;
+    // background-color: #21233C;
+    background-image: url('../assets/img/blueHome.png');
+    position: relative;
+    // background-blend-mode: soft-light;
+    // pour l'autre type d'image : luminosity et dans ce ton la 8286B8;
+    hr {
+        position: absolute;
+        margin: 0;
+        width: 1px;
+        box-sizing: border-box;
+        height: 100vh;
+        border-color: rgba(130, 134, 184, 0.2);
+    }
+    .hr1 {
+        left: 5vw;
+    }
+    .hr2 {
+        left: 25vw;
+    }
+    .hr3 {
+        left: 50vw;
+    }
+    .hr4 {
+        left: 75vw;
+    }
+    .hr5 {
+        left: 95vw;
+    }
+    .introduction {
+        padding: 10vh 25vw 0;
+        .title {
+            font-family: "Roboto Bold";
+            font-weight: bold;
+            font-size: 60px;
+            line-height: 35px;
+            margin-bottom: 30px;
+        }
+        .introDescription {
+            font-family: "Roboto Light";
+            font-size: 16px;
+            line-height: 26px;
+        }
+        .user-interaction {
+            display: flex;
+            margin-top: 30px;
+            align-items: center;
+            .button {
+                height: 50px;
+                width: 50px;
+                border-radius: 50px;
+                box-shadow: inset 0 0 0 1px white;
+                cursor: pointer;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                .white-space {
+                    height: 5px;
+                    width: 5px;
+                    border-radius: 50px;
+                    background-color: white;
+                    transition: all 1.3s ease;
+                }
+            } 
+            .button:active {
+                .white-space {
+                    height: 50px !important;
+                    width: 50px !important;
+                }
+            }
+            .description {
+                font-family: "Roboto Bold";
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-size: 10px;
+                margin-left: 15px;
+            }
+        }
+    }
     .header {
         .title {
-            .burger {
-                .ul {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr; 
-                    grid-template-rows: auto;
-                    .li {
-                        width: 2px;
-                        height: 2px;
-                        background-color: white;
-                    }
-                }
+            padding: 5%;
+            strong {
+                font-weight: bold;
             }
         }
     }
