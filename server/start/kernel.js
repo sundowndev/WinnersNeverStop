@@ -13,7 +13,8 @@ const Server = use('Server')
 |
 */
 const globalMiddleware = [
-  'Adonis/Middleware/BodyParser'
+  'Adonis/Middleware/BodyParser',
+  'App/Middleware/RequestValidation',
 ]
 
 /*
@@ -35,7 +36,9 @@ const globalMiddleware = [
 */
 const namedMiddleware = {
   auth: 'Adonis/Middleware/Auth',
-  guest: 'Adonis/Middleware/AllowGuestOnly'
+  guest: 'Adonis/Middleware/AllowGuestOnly',
+  paramIdValidation: 'App/Middleware/ParamIdValidation',
+  createChapterValidation: 'App/Middleware/CreateChapterValidation',
 }
 
 /*
