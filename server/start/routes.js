@@ -26,38 +26,10 @@ Route.get('/', ({ response }) => {
 
 Route.get('/chapters', 'ChapterController.getAll')
 
-Route.get('/chapters/:id', 'ChapterController.getOne').middleware('findOneChapterValidation')
+Route.get('/chapters/:id', 'ChapterController.getOne').middleware(['paramIdValidation'])
 
-// Route.post('/chapters', async () => {
-//   const data = await Chapter.all();
+Route.post('/chapters', 'ChapterController.create').middleware(['createChapterValidation'])
 
-//   return {
-//     data: data
-//   }
-// })
+// Route.put('/chapters/:id', 'ChapterController.edit').middleware(['paramIdValidation'])
 
-// Route.put('/chapters/:id', async ({ params }) => {
-//   const data = await Chapter.find(params.id);
-
-//   if (!data) {
-//     const response = {
-//       success: false,
-//       message: 'Item not found.',
-//     }
-//   }
-//   else {
-//     const response = {
-//       data: data,
-//     }
-//   }
-
-//   return response;
-// })
-
-// Route.delete('/chapters', async () => {
-//   const data = await Chapter.all();
-
-//   return {
-//     data: data
-//   }
-// })
+// Route.delete('/chapters/:id', 'ChapterController.delete').middleware(['paramIdValidation'])

@@ -25,6 +25,12 @@ class ChapterController {
             data: data,
         })
     }
+
+    async create({ response, request }) {
+        return response.send({
+            data: request.body
+        });
+    }
 }
 
 module.exports = ChapterController
