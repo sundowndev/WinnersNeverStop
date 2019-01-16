@@ -30,6 +30,6 @@ Route.get('/chapters/:id', 'ChapterController.getOne').middleware(['paramIdValid
 
 Route.post('/chapters', 'ChapterController.create').middleware(['createChapterValidation'])
 
-// Route.put('/chapters/:id', 'ChapterController.edit').middleware(['paramIdValidation'])
+Route.put('/chapters/:id', 'ChapterController.edit').middleware(['paramIdValidation'])
 
-// Route.delete('/chapters/:id', 'ChapterController.delete').middleware(['paramIdValidation'])
+Route.delete('/chapters/:id', 'ChapterController.delete').middleware(['paramIdValidation'])
