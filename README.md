@@ -33,7 +33,7 @@ Winners Never Stop est un projet de web documentaire destiné à étudier la pla
 
 ~~~bash
 $ git clone git@github.com:sundowndev/WinnersNeverStop.git
-# developpment only
+$ cd WinnersNeverStop
 $ chmod +x scripts/*
 $ ./scripts/setup
 ~~~
