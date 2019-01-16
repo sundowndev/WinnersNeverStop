@@ -106,7 +106,7 @@ Validation error example:
 }
 ~~~
 
-`success` key indicate if an error occured or not. It may not be present. In case of success.
+`success` key indicate if an error occured or not. It may not be present in case of success.
 
 Getting object(s):
 
@@ -151,4 +151,4 @@ Handling arrays:
 }
 ~~~
 
-`data` key presence will indicate that the action succeeded and there's no error.
+When fetching an object, `data` key presence will indicate that the action succeeded and there's no error.
