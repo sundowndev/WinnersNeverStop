@@ -1,20 +1,21 @@
 #!/usr/bin/env bash
 
-scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
+# scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
+scriptDir="$( cd "$(dirname "$0")" ; pwd -P )"
 
 cd $scriptDir/../
 echo "Installation script running for $(pwd)"
 
-if ! [ -a client/package.json ]; then
+if ! [ -a client/package-lock.json ]; then
     cd client
     npm install
     cd ..
 fi
 
-if ! [ -a server/package.json ]; then
+if ! [ -a server/package-lock.json ]; then
     cd server
     cp .env.example .env
-    npm i -g @adonis/cli
+    npm i -g @adonisjs/cli
     adonis install
 fi
 
