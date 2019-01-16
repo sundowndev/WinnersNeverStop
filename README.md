@@ -68,8 +68,8 @@ $ node server.js
 As best practice, use these headers to make requests to the API:
 
 ~~~
-Content-Type:application/x-www-form-urlencoded
-Accept:application/json
+Content-Type: application/json
+Accept: application/json
 ~~~
 
 When signed in, you must provide the access token:
