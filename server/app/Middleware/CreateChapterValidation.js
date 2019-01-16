@@ -1,24 +1,26 @@
 'use strict'
-
-const Joi = require('joi');
-
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
-class FindOneChapterValidation {
+const Joi = require('joi');
+
+class CreateChapterValidation {
   /**
    * @param {object} ctx
    * @param {Request} ctx.request
    * @param {Function} next
    */
-  async handle ({ response, params }, next) {
+  async handle ({ request, response }, next) {
     const schema = Joi.object().keys({
-      id: Joi.number().integer().required(),
+      title: Joi.string().min(3).max(35).required(),
+      thumbUrl: Joi.string().required(),
+      videoUrl: Joi.string().required(),
+      content: Joi.any().required(),
     });
 
-    const result = Joi.validate(params, schema);
-      
+    const result = Joi.validate(request.body, schema);
+
     if (result.error) {
       return response.send({
         success: false,
@@ -31,4 +33,4 @@ class FindOneChapterValidation {
   }
 }
 
-module.exports = FindOneChapterValidation
+module.exports = CreateChapterValidation
