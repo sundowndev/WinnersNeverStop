@@ -17,8 +17,9 @@ const Factory = use('Factory')
 Factory.blueprint('App/Models/Chapter', (faker) => {
   return {
     title: faker.username(),
-    content: faker.username(),
+    description: faker.username(),
     videoUrl: faker.username(),
-    thumbUrl: faker.username()
+    thumbUrl: faker.username(),
+    content: faker.username()
   }
 })
