@@ -16,7 +16,7 @@ if ! [ -a server/package-lock.json ]; then
     cd server
     cp .env.example .env
     npm i -g @adonisjs/cli
-    adonis install
+    npm install
 fi
 
 if [ $(git config gitflow.branch.master) == "" ]; then
