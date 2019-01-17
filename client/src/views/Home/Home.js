@@ -9,6 +9,7 @@ const Home = ({ whiteSpace, checkHoldLvl }) => (
         <div className="header">
             <ProjectName></ProjectName>
         </div>
+        
         <div className="introduction">
             <p className="title">Découvrez l'eSport</p>
             <p className="introDescription">Lorem Ipsum est un générateur de faux textes aléatoires. Vous choisissez le nombre de paragraphes, de mots ou de listes. Vous obtenez alors un texte aléatoire que vous pourrez ensuite utiliser librement dans vos maquettes. Le texte généré est du pseudo latin et peut donner l'impression d'être du vrai texte.</p>
@@ -20,7 +21,7 @@ const Home = ({ whiteSpace, checkHoldLvl }) => (
             </div>
         </div>
         <div className="footer">
-            
+
         </div>
     </section>
 );
