@@ -31,3 +31,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+hr {
+    position: absolute;
+    margin: 0;
+    width: 1px;
+    box-sizing: border-box;
+    height: 100vh;
+    border-color: rgba(130, 134, 184, 0.2);
+}
+.hr1 {
+    left: 5vw;
+}
+.hr2 {
+    left: 25vw;
+}
+.hr3 {
+    left: 50vw;
+}
+.hr4 {
+    left: 75vw;
+}
+.hr5 {
+    left: 95vw;
+}
