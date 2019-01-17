@@ -7,12 +7,13 @@ class ChaptersSchema extends Schema {
   up () {
     this.create('chapters', (table) => {
       table.increments()
-      table.timestamps()
+      table.timestamp('created_at').defaultTo(this.fn.now())
+      table.timestamp('updated_at').defaultTo(this.fn.now())
       table.string('title', 100).notNullable()
       table.text('description').notNullable()
       table.string('videoUrl', 255).notNullable()
       table.string('thumbUrl', 255).notNullable()
-      table.text('content').notNullable()
+      table.json('content').notNullable()
     })
   }
 

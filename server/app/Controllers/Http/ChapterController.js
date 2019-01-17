@@ -28,7 +28,9 @@ class ChapterController {
     }
 
     async create({ request, response }) {
-        const [ chapterId ] = await Database
+        request.body.content = JSON.stringify(request.body.content);
+
+        const [chapterId] = await Database
             .insert(request.body)
             .into('chapters')
             .returning('id')
@@ -49,6 +51,11 @@ class ChapterController {
     }
 
     async delete({ request, response, params }) {
+        const affectedRows = await Database
+            .table('chapters')
+            .where('id', params.id)
+            .delete()
+
         return response.send({
             success: true,
             data: {}
