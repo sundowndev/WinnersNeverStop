@@ -3,33 +3,16 @@
     // background-color: #21233C;
     background-image: url('../assets/img/blueHome.png');
     position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     // background-blend-mode: soft-light;
     // pour l'autre type d'image : luminosity et dans ce ton la 8286B8;
-    hr {
-        position: absolute;
-        margin: 0;
-        width: 1px;
-        box-sizing: border-box;
-        height: 100vh;
-        border-color: rgba(130, 134, 184, 0.2);
-    }
-    .hr1 {
-        left: 5vw;
-    }
-    .hr2 {
-        left: 25vw;
-    }
-    .hr3 {
-        left: 50vw;
-    }
-    .hr4 {
-        left: 75vw;
-    }
-    .hr5 {
-        left: 95vw;
-    }
+    
     .introduction {
         padding: 10vh 25vw 0;
+        position: relative;
+        z-index: 2;
         .title {
             font-family: "Roboto Bold";
             font-weight: bold;
@@ -64,7 +47,7 @@
                     background-color: white;
                     transition: all 1.3s ease;
                 }
-            } 
+            }
             .button:active {
                 .white-space {
                     height: 50px !important;
