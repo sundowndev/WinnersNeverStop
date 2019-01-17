@@ -44,6 +44,15 @@ class ChapterController {
     }
 
     async edit({ request, response, params }) {
+        if (request.body.content) {
+            request.body.content = JSON.stringify(request.body.content);
+        }
+
+        const affectedRows = await Database
+            .table('chapters')
+            .where('id', params.id)
+            .update(request.body)
+
         return response.send({
             success: true,
             data: {}

@@ -39,6 +39,7 @@ const namedMiddleware = {
   guest: 'Adonis/Middleware/AllowGuestOnly',
   paramIdValidation: 'App/Middleware/ParamIdValidation',
   createChapterValidation: 'App/Middleware/CreateChapterValidation',
+  updateChapterValidation: 'App/Middleware/UpdateChapterValidation',
 }
 
 /*
