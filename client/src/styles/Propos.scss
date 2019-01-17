@@ -1,0 +1,40 @@
+.PagePropos {
+  height: 100vh;
+  background-image: url("../assets/img/BackgroundPropos.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  .apropos {
+    padding: 25vh 25vw 0;
+
+    .title {
+      font-family: "Roboto Bold";
+      font-weight: bold;
+      font-size: 60px;
+      line-height: 35px;
+      margin-bottom: 70px;
+    }
+
+    .introDescription {
+      font-family: "Roboto Light";
+      font-size: 15px;
+      line-height: 26px;
+    }
+
+    .introDescriptionSecond {
+      font-family: "Roboto Light";
+      margin-top: 30px;
+      font-size: 15px;
+      line-height: 26px;
+    }
+  }
+};
+@media screen and (min-width: 200px) and (max-width: 600px) {
+  .PagePropos {
+    .apropos {
+      padding: 15vh 15vw 0;
+    }
+  }
+};
