@@ -1,17 +1,16 @@
 #!/usr/bin/env bash
 
-# scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
 scriptDir="$( cd "$(dirname "$0")" ; pwd -P )"
 
 cd $scriptDir/../
 echo "Installation script running for $(pwd)"
 
-if ! [ -a client/package-lock.json ]; then
-    cd client
-    npm install
-    cd ..
-fi
+# Client install
+cd client
+npm install
+cd ..
 
+<<<<<<< HEAD
 if ! [ -a server/package-lock.json ]; then
     cd server
     npm install
@@ -20,6 +19,15 @@ if ! [ -a server/package-lock.json ]; then
     npm install
     adonis key:generate
 fi
+=======
+# Server install
+cd server
+npm install
+cp .env.example .env
+npm i -g @adonisjs/cli
+adonis key:generate
+adonis migration:refresh --seed
+>>>>>>> upstream/develop
 
 if [ $(git config gitflow.branch.master) == "" ]; then
     # Override git flow config
