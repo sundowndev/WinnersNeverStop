@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ChapitreMenu from './ChapitreMenu';
-import axios from 'axios';
+import ChapitreIntro from './ChapitreIntro';
+import ChapitreContent from './ChapitreContent';
 
 class ChapitreContainer extends Component {
     state = {
@@ -26,13 +27,26 @@ class ChapitreContainer extends Component {
                 articles: data
             })
         })
-
-
-
+    }
+    generateStyleBackgroundImage = () => {
+        // const images = require.context('../../assets/img/', true);
+        // console.debug(images);
+        // let bg = images('/blueBitmap.png');
+        // console.debug(bg);
+        // return { backgroundImage: `url(${bg}`};
+        return { backgroundImage: 'url("assets/img/blueBitmap.png")'};
     }
     render() {
         return (
-            <ChapitreMenu></ChapitreMenu>
+            <div>
+                <ChapitreMenu
+                    title="Le monde de l'esport et sa professionnalisation"
+                    imgUrl={this.generateStyleBackgroundImage()}
+                    test="../../assets/img/blueBitmap.png"
+                ></ChapitreMenu>
+                <ChapitreIntro></ChapitreIntro>
+                <ChapitreContent></ChapitreContent>
+            </div>
         );
     }
 }

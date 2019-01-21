@@ -1,11 +1,75 @@
 .ChapitreMenu {
     height: 100vh;
     position: relative;
-    background-color: #040528;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     .header {
         .title {
             color: white;
             padding: 5%;
         }
     }
+    .menuTitle {
+        padding-left:5%;
+        margin-top: 10vh;
+        font-size: 60px;
+        width: 50%;
+        line-height: 90px;
+        font-family: "Roboto bold";
+
+
+        // TODO  mediaquery
+    }
+    .userInteraction {
+        display: flex;
+        margin-top: 30px;
+        margin-left: calc(5vw + 2px);
+        align-items: center;
+        .buttonSection {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            width: 20vw;
+            margin-top: 5vh;
+
+            // TODO mediaquery
+        }
+        .button {
+            height: 50px;
+            width: 50px;
+            border-radius: 50px;
+            box-shadow: inset 0 0 0 1px white;
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .play, .arrowDown {
+            width: 7px;
+            height: auto;
+        }
+        .description {
+            font-family: "Roboto Bold";
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 10px;
+            margin-left: 15px;
+        }
+
+    }
+}
+
+.ChapitreIntro {
+    height: 100vh;
+    position: relative;
+    background-color: blue;
+}
+
+.ChapitreContent {
+    height: 100vh;
+    position: relative;
+    background-color: white;
 }
