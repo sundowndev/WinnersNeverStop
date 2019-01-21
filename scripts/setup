@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-scriptDir="$( cd "$(dirname "$0")" ; pwd -P )"
+scriptDir="$( cd "$(dirname "$0")" ; pwd -P )/../"
 
-cd $scriptDir/../
+cd $scriptDir
+
 echo "Installation script running for $(pwd)"
 
 # Client install
