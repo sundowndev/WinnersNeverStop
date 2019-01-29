@@ -22,6 +22,7 @@ class ChapitreContainer extends Component {
         fetch('http://127.0.0.1:3000/chapters',myInit).then(function(response) {
             return response.json();
         }).then(data => {
+            console.debug('data : ');
             console.debug(data);
             this.setState({
                 articles: data
@@ -36,6 +37,9 @@ class ChapitreContainer extends Component {
         // return { backgroundImage: `url(${bg}`};
         return { backgroundImage: 'url("assets/img/blueBitmap.png")'};
     }
+    generateIntroPicture = () => {
+        return { backgroundImage: 'url("assets/img/chapter2.png")'}
+    }
     render() {
         return (
             <div>
@@ -44,7 +48,10 @@ class ChapitreContainer extends Component {
                     imgUrl={this.generateStyleBackgroundImage()}
                     test="../../assets/img/blueBitmap.png"
                 ></ChapitreMenu>
-                <ChapitreIntro></ChapitreIntro>
+                <ChapitreIntro
+                    title="title placholder"
+                    url="assets/img/chapter2.png"
+                ></ChapitreIntro>
                 <ChapitreContent></ChapitreContent>
             </div>
         );

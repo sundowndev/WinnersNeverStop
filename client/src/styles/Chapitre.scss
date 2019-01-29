@@ -65,7 +65,41 @@
 .ChapitreIntro {
     height: 100vh;
     position: relative;
-    background-color: blue;
+    background-color: #0b1636;
+    .intro {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        height: 100%;
+        .title {
+            padding: 5vw;
+            width: 80%;
+        }
+        .picture {
+            position: relative;
+            .playerInfo{
+                position: absolute;
+                top: 30%;
+                left: 20%;
+                .tag {
+                    font-family: "Roboto Bold"
+                }
+                .name {
+
+                }
+            }
+            img {
+                position: absolute;
+                bottom: 0;
+                right: 20%;
+                width: 40%;
+                height: auto;
+            }
+        }
+    }
+    .introPicture {
+        // background-size: 100% 100%;
+        float: right;
+    }
 }
 
 .ChapitreContent {
