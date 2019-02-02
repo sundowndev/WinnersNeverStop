@@ -38,7 +38,7 @@ class HomeContainer extends Component {
         let width = parseInt(window.getComputedStyle(this.whiteSpace.current).getPropertyValue('width'));
         console.debug(width);
         if (width >= 49) {
-            this.props.history.push('/introduction')
+            this.props.history.push('/article')
         }
         // let diff = this.state.end.diff(this.state.start);
         // console.debug(diff);
