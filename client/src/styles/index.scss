@@ -10,6 +10,8 @@
     font-family: "Roboto Bold";
     src: url("../assets/fonts/Roboto-Bold.ttf"),
 }
+$icon-font-path: "~videojs-font/fonts/";
+@import '~video.js/src/css/video-js';
 
 @import './reset.scss';
 @import './Home.scss';
@@ -42,17 +44,17 @@ hr {
     border-color: rgba(130, 134, 184, 0.2);
 }
 .hr1 {
-    left: 5vw;
+    left: 6vw;
 }
 .hr2 {
-    left: 25vw;
+    left: 28vw;
 }
 .hr3 {
     left: 50vw;
 }
 .hr4 {
-    left: 75vw;
+    left: 72vw;
 }
 .hr5 {
-    left: 95vw;
+    left: 94vw;
 }

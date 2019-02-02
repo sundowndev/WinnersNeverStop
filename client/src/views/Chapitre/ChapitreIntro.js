@@ -21,9 +21,7 @@ const ChapitreIntro = ({title, url}) => (
 );
 ChapitreIntro.propTypes = {
     title: PropTypes.string.isRequired,
-    // style: PropTypes.object.isRequired
     url: PropTypes.string.isRequired
-    // index: PropTypes.number.isRequired
 }
 
 
