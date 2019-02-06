@@ -280,7 +280,13 @@
                         height: 3px;
                         width: 40px;
                     }
+                    .index1 {
+                        top: -20px;
+                    }
                     .index2 {
+                        top: 0px;
+                    }
+                    .index3 {
                         top: 20px;
                     }
                     .active {
@@ -291,4 +297,20 @@
             }
         }
     }
+    .link {
+        position: absolute;
+        color: #0b1636;
+        z-index: 3;
+        bottom: 6vh;
+        right: 15vw;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-family: "Roboto Bold";
+        font-size: 10px;
+    }
+}
+.animated {
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
 }

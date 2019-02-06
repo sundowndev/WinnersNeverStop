@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Grid from '../../components/Grid/Grid';
 
 const ChapitreFooter = ({index, decrementIndex, incrementIndex}) => (
     <section className="ChapitreFooter">
         <div className="footerButtons">
-            <div className={index === 0 ? 'user-interaction left hidden': 'user-interaction left'}>
+            <div className="user-interaction left">
                 <div onClick={decrementIndex} className="button">
                     <div className="white-space"></div>
                 </div>
                 <span className="description">previous chapter</span>
             </div>
-            <div className={index === 1 ? 'user-interaction right hidden': 'user-interaction right'}>
+            <div className="user-interaction right">
                 <div onClick={incrementIndex} className="button">
                     <div className="white-space"></div>
                 </div>

@@ -19,12 +19,13 @@
             font-weight: bold;
             font-size: 60px;
             line-height: 35px;
-            margin-bottom: 30px;
+            margin-bottom: 60px;
         }
         .introDescription {
             font-family: "Roboto Light";
             font-size: 16px;
             line-height: 26px;
+            margin-bottom: 60px;
         }
         .user-interaction {
             display: flex;
@@ -46,7 +47,7 @@
                     width: 5px;
                     border-radius: 50px;
                     background-color: white;
-                    transition: all 1.3s ease;
+                    transition: all 1s ease;
                 }
             }
             .button:active {

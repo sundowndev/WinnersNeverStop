@@ -5,6 +5,7 @@
   "dependencies": {
     "@babel/core": "7.1.0",
     "@svgr/webpack": "2.4.1",
+    "animate.css": "^3.7.0",
     "axios": "^0.18.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
@@ -48,6 +49,7 @@
     "react-dom": "^16.6.3",
     "react-hold-animation": "^0.1.1",
     "react-router-dom": "^4.3.1",
+    "react-scroll": "^1.7.10",
     "react-transition-group": "^2.5.2",
     "resolve": "1.8.1",
     "sass-loader": "7.1.0",

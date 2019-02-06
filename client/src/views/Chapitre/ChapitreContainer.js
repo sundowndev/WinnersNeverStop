@@ -45,22 +45,11 @@ class ChapitreContainer extends Component {
     componentWillUnmount() {
         window.removeEventListener("resize", this.updateDimensions);
     }
-    getNextIndex = () => {
-        return this.state.index + 1;
-    }
-    getPreviousIndex = () => {
-        return this.state.index - 1;
-    }
     generateStyleBackgroundImage = () => {
-        // const images = require.context('../../assets/img/', true);
-        // console.debug(images);
-        // let bg = images('/blueBitmap.png');
-        // console.debug(bg);
-        // return { backgroundImage: `url(${bg}`};
-        return { backgroundImage: 'url("assets/img/blueBitmap.png")'};
+        return { backgroundImage: 'url("/assets/img/blueBitmap.png")'};
     }
     generateIntroPicture = () => {
-        return { backgroundImage: 'url("assets/img/chapter2.png")'}
+        return { backgroundImage: 'url("/assets/img/chapter2.png")'}
     }
     toggleBurgerState = () => {
         if (this.state.burgerState) {
@@ -77,36 +66,53 @@ class ChapitreContainer extends Component {
         }
     }
     decrementIndex = () => {
-        this.setState({
-            index: 0
-        })
+        this.setState((previousState) => {
+            if (previousState.index === 0) {
+                return {
+                    index: 2
+                };
+            }
+            else {
+
+                return {
+                    index: previousState.index - 1
+                }
+            }
+        });
     }
     incrementIndex = () => {
-        this.setState({
-            index: 1
-        })
+        this.setState((previousState) => {
+            if (previousState.index === 2) {
+                return {
+                    index: 0
+                };
+            }
+            else {
+
+                return {
+                    index: previousState.index + 1
+                }
+            }
+        });
     }
     render() {
         return (
-            <div>
+            <div className="animated fadeIn">
                 <BurgerMenu
                     open={this.state.burgerState}
                     toggleState={this.toggleBurgerState}
                     imgUrl={this.generateStyleBackgroundImage()}
                     index={this.state.index}
-                    next={this.getNextIndex()}
-                    prev={this.getPreviousIndex()}
                     decrementIndex={this.decrementIndex}
                     incrementIndex={this.incrementIndex}
                 ></BurgerMenu>
                 <ChapitreMenu
                     title="Le monde de l'esport et sa professionnalisation"
                     imgUrl={this.generateStyleBackgroundImage()}
-                    test="../../assets/img/blueBitmap.png"
                 ></ChapitreMenu>
                 <ChapitreIntro
                     title="title placholder"
-                    url="assets/img/chapter2.png"
+                    url="/assets/img/chapter2.png"
                 ></ChapitreIntro>
                 <ChapitreContent
                     iFrameHeight={this.state.height.toString()}

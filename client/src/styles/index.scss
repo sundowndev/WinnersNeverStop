@@ -12,6 +12,7 @@
 }
 $icon-font-path: "~videojs-font/fonts/";
 @import '~video.js/src/css/video-js';
+@import '~animate.css/animate.css';
 
 @import './reset.scss';
 @import './Home.scss';
@@ -57,4 +58,8 @@ hr {
 }
 .hr5 {
     left: 94vw;
+}
+
+.App {
+  background-color: #0B1636;
 }

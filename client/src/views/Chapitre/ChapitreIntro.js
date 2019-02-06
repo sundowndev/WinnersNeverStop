@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Grid from '../../components/Grid/Grid';
 
 const ChapitreIntro = ({title, url}) => (
-    <section className="ChapitreIntro">
+    <section className="ChapitreIntro animated fadeIn">
         <Grid></Grid>
         <div className="intro">
             <div className="title">

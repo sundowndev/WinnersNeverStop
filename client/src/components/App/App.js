@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomeContainer from '../../views/Home/HomeContainer';
 import ChapitreContainer from '../../views/Chapitre/ChapitreContainer';
 import Propos from '../../views/APropos/Propos.js';
@@ -11,9 +11,12 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-            <Route exact path='/' component={HomeContainer} />
-            <Route exact path='/article' component={ChapitreContainer} />
-            <Route exact path='/propos' component={Propos} />
+            <Switch>
+              <Route exact path='/' component={HomeContainer} />
+              <Route exact path='/article/:index' component={ChapitreContainer} />
+              <Route exact path='/about' component={Propos} />
+              <Route component={HomeContainer} />
+            </Switch>
           </div>
         </Router>
       </div>
