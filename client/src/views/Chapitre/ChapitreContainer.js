@@ -45,7 +45,6 @@ class ChapitreContainer extends Component {
     componentWillUnmount() {
         window.removeEventListener("resize", this.updateDimensions);
     }
-
     generateStyleBackgroundImage = () => {
         return { backgroundImage: 'url("/assets/img/blueBitmap.png")'};
     }

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Grid from '../../components/Grid/Grid';
 import { Link } from 'react-scroll'
 
-
 const Chapitre = ({title, imgUrl}) => (
     <section className="ChapitreMenu" style={imgUrl}>
         <Grid></Grid>
