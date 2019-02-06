@@ -13,7 +13,7 @@ class RequestValidation {
    */
   async handle ({ request, response }, next) {
     const schema = Joi.object().keys({
-      'accept': Joi.any().valid('application/json').required(),
+      // 'accept': Joi.any().valid('application/json').required(),
       'content-type': Joi.any().valid('application/json').required(),
     }).unknown()
 
