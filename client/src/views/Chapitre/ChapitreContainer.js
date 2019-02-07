@@ -19,18 +19,18 @@ class ChapitreContainer extends Component {
         players: [
             {
                 tag: 'Next',
-                name: '',
-                pictureUrl: 'Next.png'
+                name: 'Jordan Savelli',
+                pictureUrl: '/assets/img/Next.png'
             },
             {
                 tag: 'SpeedSelf',
-                name: '',
-                pictureUrl: 'SpeedSelf.png'
+                name: 'Thomas',
+                pictureUrl: '/assets/img/SpeedSelf.png'
             },
             {
-                tag: '',
-                name: '',
-                pictureUrl: 'chapter3.png'
+                tag: 'Targamas',
+                name: 'Raphaël Crabbé',
+                pictureUrl: '/assets/img/Targamas.png'
             }
         ]
     }
@@ -39,7 +39,6 @@ class ChapitreContainer extends Component {
         this.updateDimensions();
     }
     componentDidUpdate() {
-        console.debug('update');
         if (this.state.isPlayerDisplayed){
             let el = document.getElementById('player').contentWindow
             console.debug(el);
@@ -92,16 +91,39 @@ class ChapitreContainer extends Component {
         return { backgroundImage: 'url("/assets/img/chapter2.png")'}
     }
     toggleBurgerState = () => {
+        let id = null;
         if (this.state.burgerState) {
             this.setState({
                 burgerState: false
             })
             document.querySelector('body').style.overflow = "auto";
+            window.removeEventListener('wheel', (event) => {
+                window.clearTimeout(id);
+                id = window.setTimeout(() => {
+                    if (event.deltaY < 0) {
+                        this.decrementIndex();
+                    }
+                    else {
+                        this.incrementIndex();
+                    }
+                })
+            })
         }
         else {
             this.setState({
                 isPlayerDisplayed: false,
                 burgerState: true
+            })
+            window.addEventListener('wheel', (event) => {
+                window.clearTimeout(id);
+                id = window.setTimeout(() => {
+                    if (event.deltaY < 0) {
+                        this.decrementIndex();
+                    }
+                    else {
+                        this.incrementIndex();
+                    }
+                }, 60)
             })
             document.querySelector('body').style.overflow = "hidden";
         }
@@ -184,7 +206,7 @@ class ChapitreContainer extends Component {
                             ></ChapitreMenu>
                             <ChapitreIntro
                                 title={this.state.articles[this.state.index].description}
-                                url="/assets/img/chapter2.png"
+                                player={this.state.players[this.state.index]}
                             ></ChapitreIntro>
                             <ChapitreContent
                                 articleTitle1={this.state.articles[this.state.index].content[0].title}

@@ -47,15 +47,15 @@
                     width: 5px;
                     border-radius: 50px;
                     background-color: white;
-                    transition: all 1s ease;
+                    // transition: all 1s ease;
                 }
             }
-            .button:active {
-                .white-space {
-                    height: 50px !important;
-                    width: 50px !important;
-                }
-            }
+            // .button:active {
+            //     .white-space {
+            //         height: 50px !important;
+            //         width: 50px !important;
+            //     }
+            // }
             .description {
                 font-family: "Roboto Bold";
                 text-transform: uppercase;
