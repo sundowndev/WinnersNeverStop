@@ -114,7 +114,7 @@
         grid-template-columns: 50% 50%;
         .articlePicture {
             width: 50%;
-            margin-top: -200px;
+            margin-top: -400px;
             margin-left: 6vw;
             z-index: 2;
             .greyPlaceholderForPicture {
@@ -127,12 +127,12 @@
         .articleOne {
             width: 44vw;
             padding: 6vw;
-            margin-top: -100px;
         }
     }
     .articleTwo {
         padding: 6vw;
         width: 44vw;
+        margin-top: -100px;
     }
     .title {
         font-family: "Roboto Bold";
@@ -142,8 +142,8 @@
     }
     .content {
         font-family: "Roboto Light";
-        font-size: 14px;
-        line-height: 21px;
+        font-size: 16px;
+        line-height: 27px;
     }
     .playerVideo {
         z-index: 2;

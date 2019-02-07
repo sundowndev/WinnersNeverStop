@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Grid from '../../components/Grid/Grid';
 import { Element } from 'react-scroll'
 
-const ChapitreIntro = ({title, url}) => (
+const ChapitreIntro = ({title, player}) => (
     <Element name="article" className="video">
         <section className="ChapitreIntro animated fadeIn">
             <Grid></Grid>
@@ -13,10 +13,10 @@ const ChapitreIntro = ({title, url}) => (
                 </div>
                 <div className="picture">
                     <div className="playerInfo">
-                        <span className="name">name</span><br></br>
-                        <span className="tag">tag</span>
+                        <span className="name">{player.name}</span><br></br>
+                        <span className="tag">{player.tag}</span>
                     </div>
-                    <img src={url} alt="player"></img>
+                    <img src={player.pictureUrl} alt="player"></img>
                 </div>
             </div>
         </section>
@@ -24,7 +24,8 @@ const ChapitreIntro = ({title, url}) => (
 );
 ChapitreIntro.propTypes = {
     title: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired
+    // url: PropTypes.string.isRequired,
+    player: PropTypes.object.isRequired
 }
 
 
