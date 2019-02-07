@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3'
 
 services:
 
@@ -17,3 +17,19 @@ services:
     restart: on-failure
     ports:
       - 8080:8080
+
+  api:
+    # image: "node:8"
+    # user: "node"
+    # working_dir: /home/node/app
+    build: ./docker/api
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - ./server/.env
+    # volumes:
+    #   - ./server:/home/node/app
+      # - ./docker/api:/home/node/app/docker
+    ports:
+      - 3000:3000
+    command: "npm i"
