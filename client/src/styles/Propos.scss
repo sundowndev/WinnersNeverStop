@@ -6,8 +6,13 @@
   background-size: cover;
   position: relative;
 
+  .header {
+    .title {
+      padding: 4% 6%;
+    }
+  }
   .apropos {
-    padding: 25vh 25vw 0;
+    padding: 18vh 28vw 0;
 
     .title {
       font-family: "Roboto Bold";

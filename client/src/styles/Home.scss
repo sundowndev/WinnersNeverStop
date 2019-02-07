@@ -1,5 +1,6 @@
 .Home {
     height: 100vh;
+    // min-height: 600px;  //a voir
     // background-color: #21233C;
     background-image: url('../assets/img/blueHome.png');
     position: relative;
@@ -10,18 +11,21 @@
     // pour l'autre type d'image : luminosity et dans ce ton la 8286B8;
 
     .introduction {
-        padding: 10vh 25vw 0;
+        padding: 10vh 28vw 0;
+        position: relative;
+        z-index: 2;
         .title {
             font-family: "Roboto Bold";
             font-weight: bold;
             font-size: 60px;
             line-height: 35px;
-            margin-bottom: 30px;
+            margin-bottom: 60px;
         }
         .introDescription {
             font-family: "Roboto Light";
             font-size: 16px;
             line-height: 26px;
+            margin-bottom: 60px;
         }
         .user-interaction {
             display: flex;
@@ -43,7 +47,7 @@
                     width: 5px;
                     border-radius: 50px;
                     background-color: white;
-                    transition: all 1.3s ease;
+                    transition: all 1s ease;
                 }
             }
             .button:active {
@@ -63,7 +67,7 @@
     }
     .header {
         .title {
-            padding: 5%;
+            padding: 4% 6%;
             strong {
                 font-weight: bold;
             }
