@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
-import Introduction from './Introduction';
+import IntroductionEntryPoint from './IntroductionEntryPoint';
 
 class IntroductionContainer extends Component {
     state = {
-
+        index: 0,
     } 
     componentDidMount() {
 
     }
     render() {
         return (
-            <Introduction></Introduction>
+            <IntroductionEntryPoint></IntroductionEntryPoint>
         );
     }
 }
