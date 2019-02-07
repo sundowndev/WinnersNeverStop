@@ -7,7 +7,7 @@ cd $scriptDir
 echo "Populate script running for $(pwd)"
 
 cd server
-adonis migration:refresh --seed
+adonis migration:refresh --seed --force
 
 echo
 echo "Populate script executed."
