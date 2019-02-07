@@ -17,7 +17,6 @@ npm install
 cp .env.example .env
 npm i -g @adonisjs/cli
 adonis key:generate
-adonis migration:refresh --seed
 
 if [ $(git config gitflow.branch.master) == "" ]; then
     # Override git flow config

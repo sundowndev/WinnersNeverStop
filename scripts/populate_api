@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+scriptDir="$( cd "$(dirname "$0")" ; pwd -P )/../"
+
+cd $scriptDir
+
+echo "Populate script running for $(pwd)"
+
+cd server
+adonis migration:refresh --seed
+
+echo
+echo "Populate script executed."
