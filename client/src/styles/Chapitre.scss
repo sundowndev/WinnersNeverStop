@@ -146,9 +146,11 @@
     }
     .playerVideo {
         z-index: 2;
-        position: relative;
-        margin-left: 28vw;
-        width: 66vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
     }
 }
 
@@ -180,6 +182,17 @@
                     border-radius: 50px;
                     background-color: white;
                 }
+                .arrowLeft {
+                    margin-left: -1px;
+                    width: 30%;
+                    transform: rotate(90deg);
+                }
+                .arrowRight {
+                    width: 30%;
+                    margin-left: 1px;
+                    transform: rotate(270deg);
+                }
+
             }
             .description {
                 font-family: "Roboto Bold";
@@ -209,6 +222,15 @@
             fill: #0b1636;
         }
     }
+    .button {
+        background-color: rgba(11, 22, 54, 0.3);
+        padding: 20px 22px;
+        top: calc(4vw - 20px);
+        right: calc(6vw - 22px);
+        border-radius: 50px;
+        cursor: pointer;
+
+    }
     .icon {
         cursor: pointer;
         z-index: 5;
@@ -223,6 +245,12 @@
         height: 100vh;
         width: 100vw;
         background-color: white;
+        .Grid {
+            hr {
+                border-color: #979797;
+                opacity: 0.1;
+            }
+        }
         .currentChapter {
             z-index: 3;
             margin: 15vh calc(6vw);
@@ -276,18 +304,19 @@
                     position: relative;
                     hr {
                         border-color: rgba(130, 134, 184, 0.2);
+                        border-radius: 50px;
                         background-color: rgba(130, 134, 184, 0.2);
                         height: 3px;
-                        width: 40px;
+                        width: 30px;
                     }
                     .index1 {
-                        top: -20px;
+                        top: -14px;
                     }
                     .index2 {
                         top: 0px;
                     }
                     .index3 {
-                        top: 20px;
+                        top: 14px;
                     }
                     .active {
                         background-color: white;
@@ -299,15 +328,23 @@
     }
     .link {
         position: absolute;
-        color: #0b1636;
         z-index: 3;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         bottom: 6vh;
-        right: 15vw;
-        text-decoration: none;
-        text-transform: uppercase;
+        right: 6vw;
         letter-spacing: 2px;
         font-family: "Roboto Bold";
         font-size: 10px;
+        a {
+            color: #0b1636;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .first {
+            margin-right: 3vw;
+        }
     }
 }
 .animated {
