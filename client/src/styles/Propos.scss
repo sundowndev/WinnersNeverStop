@@ -5,10 +5,23 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-
+  @media screen and (max-width: 400px) {
+    height: auto;
+  }
   .header {
-    .title {
-      padding: 4% 6%;
+    .arrowContainer {
+        position: absolute;
+        top: calc(4vw - 20px);
+        left: calc(6vw - 20px);
+        z-index: 3;
+        background-color: rgba(11, 22, 54, 0.3);
+        padding: 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        .arrowBack {
+            margin-left: -3px;
+            transform: rotate(90deg);
+        }
     }
   }
   .apropos {
@@ -39,7 +52,7 @@
 @media screen and (min-width: 200px) and (max-width: 600px) {
   .PagePropos {
     .apropos {
-      padding: 15vh 15vw 0;
+      padding: 15vh 6vw;
     }
   }
 };

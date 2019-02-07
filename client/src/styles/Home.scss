@@ -7,6 +7,11 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    @media screen and (max-width: 700px) {
+        min-height: 100vh;
+        height: auto;
+    }
+
     // background-blend-mode: soft-light;
     // pour l'autre type d'image : luminosity et dans ce ton la 8286B8;
 
@@ -14,11 +19,14 @@
         padding: 10vh 28vw 0;
         position: relative;
         z-index: 2;
+        @media screen and (max-width: 700px) {
+            padding: 10vh 6vw 0;
+        }
         .title {
             font-family: "Roboto Bold";
             font-weight: bold;
             font-size: 60px;
-            line-height: 35px;
+            line-height: 90px;
             margin-bottom: 60px;
         }
         .introDescription {
@@ -31,6 +39,9 @@
             display: flex;
             margin-top: 30px;
             align-items: center;
+            @media screen and (max-width: 700px) {
+                padding-bottom: 50px;
+            }
             .button {
                 height: 50px;
                 width: 50px;

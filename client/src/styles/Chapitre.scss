@@ -18,7 +18,11 @@
         line-height: 90px;
         font-family: "Roboto bold";
 
-
+        @media screen and (max-width: 700px) {
+            font-size: 40px;
+            line-height: 60px;
+            width: 66vw;
+        }
         // TODO  mediaquery
     }
     .userInteraction {
@@ -32,6 +36,9 @@
             flex-direction: row;
             width: 22vw;
             margin-top: 5vh;
+            @media screen and (max-width: 700px) {
+                width: 44vw;
+            }
 
             // TODO mediaquery
         }
@@ -64,6 +71,9 @@
 
 .ChapitreIntro {
     height: 100vh;
+    @media screen and (max-width: 400px) {
+        height: 80vh;
+    }
     position: relative;
     background-color: #0b1636;
     .intro {
@@ -73,14 +83,26 @@
         .title {
             padding: 6vw;
             width: 80%;
-            line-height: 24px;
+            line-height: 27px;
+            @media screen and (max-width: 700px) {
+                font-size: 12px;
+                line-height: 18px;
+            }
+            @media screen and (max-width: 400px) {
+                font-size: 14px;
+                line-height: 23px;
+            }
         }
         .picture {
             position: relative;
+            z-index: 3;
             .playerInfo{
                 position: absolute;
                 top: 30%;
                 left: 20%;
+                @media screen and (min-width: 401px) and (max-width: 700px) {
+                    top: 20%;    
+                }
                 .tag {
                     font-family: "Roboto Bold"
                 }
@@ -94,6 +116,13 @@
                 right: 20%;
                 width: 40%;
                 height: auto;
+                @media screen and (min-width: 401px) and (max-width: 700px) {
+                    width: 40%;    
+                }
+                @media screen and (max-width: 400px) {
+                    width: 60%;    
+                }
+
             }
         }
     }
@@ -103,6 +132,12 @@
 }
 
 .ChapitreContent {
+    .Grid {
+        hr {
+            border-color: #979797;
+            opacity: 0.1;
+        }
+    }
     color: #0b1636;
     position: relative;
     height: auto;
@@ -112,27 +147,53 @@
         display: flex;
         align-items: center;
         grid-template-columns: 50% 50%;
+        @media screen and (max-width: 400px) {
+            flex-wrap: wrap;
+        }
         .articlePicture {
             width: 50%;
             margin-top: -400px;
             margin-left: 6vw;
             z-index: 2;
+            @media screen and (max-width: 700px) {
+                margin-top: -100px;
+            }
+            @media screen and (max-width: 400px) {
+                margin-top: 20px;
+            }
+
+
             .greyPlaceholderForPicture {
                 height: 700px;
                 z-index: 2;
-                width: 44vw;
-                background-color: grey;
+                width: calc(44vw + 3px);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                @media screen and (max-width: 400px) {
+                    width: calc(88vw + 3px);
+                }
+                @media screen and (max-width: 700px) {
+                    height: 500px;
+                }
             }
         }
         .articleOne {
             width: 44vw;
             padding: 6vw;
+            @media screen and (max-width: 400px) {
+                width: 88vw;
+            }
         }
     }
     .articleTwo {
         padding: 6vw;
         width: 44vw;
         margin-top: -100px;
+        @media screen and (max-width: 400px) {
+            margin-top: 0;
+            width: 88vw;
+        }
     }
     .title {
         font-family: "Roboto Bold";
@@ -159,10 +220,16 @@
     background-color: #0b1636;
     height: 150px;
     text-align: center;
+    @media screen and (max-width: 400px) {
+        height: 200px;
+    }
     .footerButtons {
         width: 60%;
         margin: auto;
         padding-top: 60px;
+        @media screen and (max-width: 700px) {
+            width: 80%;
+        }
         .user-interaction {
             display: flex;
             align-items: center;
@@ -208,9 +275,15 @@
         }
         .left {
             float: left;
+            @media screen and (max-width: 400px) {
+                margin-bottom: 20px;
+            }
         }
         .right {
             float: right;
+            @media screen and (max-width: 400px) {
+                float: left;
+            }
         }
     }
 }
@@ -299,6 +372,10 @@
                         text-transform: uppercase;
                         font-size: 10px;
                         margin-left: 15px;
+                        @media screen and (max-width: 400px) {
+                            width: 50%;
+                            line-height: 18px;
+                        }
                     }
                 }
                 .barres {

@@ -17,7 +17,7 @@ const Home = ({ whiteSpace, checkHoldLvl, toggleAnim, button }) => (
                 <div ref={button} className="button" onClick={toggleAnim}>
                     <div ref={whiteSpace} className="white-space"></div>
                 </div>
-                <span className="description">Maintenez pour découvrir</span>
+                <span className="description">Cliquez pour découvrir</span>
             </div>
         </div>
     </section>
