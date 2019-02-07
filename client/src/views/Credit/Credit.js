@@ -1,20 +1,38 @@
 import React from 'react';
 import Grid from '../../components/Grid/Grid';
-import ProjectName from '../../components/ProjectName/ProjectName';
+// import header from ...
 
-const Credit = () => (
+
+const Credit = ({ whiteSpace, checkHoldLvl }) => (
 
 <section className="PageCredit">
-    <Grid></Grid>
-    <div className="header">
-        <ProjectName></ProjectName>
-    </div>
+<Grid></Grid>
 
-    <div className="credit">
-        <p className="title">Credits</p>
-        <p className="introDescription">The text is derived from Ciceros De Finibus Bonorum et Malorum (On the Ends of Goods and Evils, or alternatively the Purposes of Good and Evil ). The original passage began neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit  translation Neither is there anyone who loves grief itself since.</p>
-        <p className="introDescriptionSecond">Lorem Ipsum est un générateur de faux textes aléatoires. Vous choisissez le nombre de paragraphes, de mots ou de listes. Vous obtenez alors un texte aléatoire que vous pourrez ensuite utiliser librement dans vos maquettes. Le texte généré est du pseudo latin et peut donner l'impression d'être du vrai texte.</p>
-    </div>
+<div className="ContainerPageCredit">
+
+<div className="DeveloperBlock">
+    <p className="title">Développeurs</p>
+    <h2 className="introDescription">Cerveaux Raphaël</h2>
+    <h2 className="introDescription">Aimé Quentin</h2>
+    <h2 className="introDescription">De jesus Mickael</h2>
+</div>
+
+
+<div className="ContainerFlex">
+<div className="DesignerBlock">
+    <p className="title">Designers</p>
+    <h2 className="introDescription">Block Mathieu</h2>
+    <h2 className="introDescription">De jesus Mickael</h2>
+    <h2 className="introDescription">Chemin Aymeline</h2>
+</div>
+
+<div className="RemerciementBlock">
+    <p className="title">Remerciement</p>
+    <p className="introDescription">The texos De Finibusm (On the Ends of Goods and Evils, or alternatively the Purposes of Good and Evit, consectetur, adipisci velit  translation Neither is there anyone who loves grief itself since.</p>
+</div>
+</div>
+
+</div>
 </section>
 );
 
