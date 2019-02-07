@@ -1,8 +1,14 @@
-version: '3'
+version: '2'
 
 services:
+  # adminer:
+  #   image: adminer
+  #   restart: on-failure
+  #   ports:
+  #     - 8080:8080
 
   db:
+    container_name: wns_db
     image: postgres
     restart: on-failure
     environment:
@@ -11,25 +17,52 @@ services:
       POSTGRES_DB: WinnersNeverStop
     ports:
       - 3306:5432
+    networks:
+      - default
+      - postgres
 
-  adminer:
-    image: adminer
+  client:
+    container_name: wns_client
     restart: on-failure
-    ports:
-      - 8080:8080
-
-  api:
-    # image: "node:8"
-    # user: "node"
-    # working_dir: /home/node/app
-    build: ./docker/api
+    build: 
+      context: "./client"
+      dockerfile: Dockerfile
     environment:
       - NODE_ENV=production
-    env_file:
-      - ./server/.env
-    # volumes:
-    #   - ./server:/home/node/app
-      # - ./docker/api:/home/node/app/docker
+    # env_file:
+    #   - ./docker/api/.env
+    volumes:
+      - wns_client_data:/usr/app/client
+
+  api:
+    container_name: wns_api
+    restart: on-failure
+    image: node
+    build: 
+      context: "./server"
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=production
     ports:
-      - 3000:3000
-    command: "npm i"
+      - "3000:3000"
+    networks:
+      - default
+      - postgres
+
+  nginx:
+    container_name: wns_nginx
+    image: nginx:latest
+    volumes_from:
+      - client
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+    labels:
+      - "traefik.domain=winnersnevers.top"
+
+volumes:
+  wns_client_data:
+
+networks:
+  postgres: {}
