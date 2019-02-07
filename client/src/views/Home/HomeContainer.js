@@ -12,43 +12,29 @@ class HomeContainer extends Component {
         // this.startTimer = this.startTimer.bind(this);
         // this.endTimer = this.endTimer.bind(this);
         this.pushIfHoldedEnough = this.pushIfHoldedEnough.bind(this);
+        this.toggleAnim = this.toggleAnim.bind(this);
         this.whiteSpace = React.createRef();
     } 
     componentDidMount() {
 
     }
-    // startTimer() {
-    //     let start = moment();
-    //     this.setState({
-    //         start: start
-    //     });
-    //     console.debug('down');
-    // }
-    // endTimer() {
-    //     console.debug(this.whiteSpace);
-    //     console.debug(window.getComputedStyle(this.whiteSpace.current).getPropertyValue('width'));
-    //     let end = moment();
-    //     await this.setState({
-    //         end: end
-    //     });
-    //     console.debug('up');
-    //     this.computeDiff();
-    // }
+    toggleAnim() {
+        console.debug(this.whiteSpace.current)
+        window.setInterval(() => {
+            this.whiteSpace.current.width = window.getComputedStyle(this.whiteSpace.current).getPropertyValue('width') + 1;
+        }, 20)
+    }
     pushIfHoldedEnough() {
         let width = parseInt(window.getComputedStyle(this.whiteSpace.current).getPropertyValue('width'));
         if (width >= 49) {
             this.props.history.push('/article/1')
         }
-        // let diff = this.state.end.diff(this.state.start);
-        // console.debug(diff);
-        // if (this.state.end.diff(this.state.start)) {
-        //     this.props.history.push('/introduction');
-        // }
     }
     render() {
         return (
             <Home
                 // startTimer={this.startTimer}
+                toggleAnim={this.toggleAnim}
                 checkHoldLvl={this.pushIfHoldedEnough}
                 whiteSpace={this.whiteSpace}
             ></Home>

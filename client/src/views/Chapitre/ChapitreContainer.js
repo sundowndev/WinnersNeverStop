@@ -15,14 +15,39 @@ class ChapitreContainer extends Component {
         playerWidth: 0,
         playerHeight: 0,
         burgerState: false,
-        isPlayerDisplayed: false
+        isPlayerDisplayed: false,
+        players: [
+            {
+                tag: 'Next',
+                name: '',
+                pictureUrl: 'Next.png'
+            },
+            {
+                tag: 'SpeedSelf',
+                name: '',
+                pictureUrl: 'SpeedSelf.png'
+            },
+            {
+                tag: '',
+                name: '',
+                pictureUrl: 'chapter3.png'
+            }
+        ]
     }
 
     componentWillMount() {
         this.updateDimensions();
     }
+    componentDidUpdate() {
+        console.debug('update');
+        if (this.state.isPlayerDisplayed){
+            let el = document.getElementById('player').contentWindow
+            console.debug(el);
+            let video = document.querySelector('.video-js')
+            console.debug(video);
+        }
+    }
     componentDidMount() {
-
         this.setState({
             index: parseInt(this.props.match.params.index - 1)
         })
@@ -34,8 +59,14 @@ class ChapitreContainer extends Component {
                        headers: myHeaders,
                        mode: 'cors',
                        cache: 'default' };
-
-        fetch('http://127.0.0.1:3000/chapters',myInit).then(function(response) {
+        let url = ''
+        if (process.env.API_URL) {
+            url = process.env.API_URL;
+        }
+        else {
+            url = 'http://127.0.0.1:3000'
+        }
+        fetch(`${url}/chapters`,myInit).then(function(response) {
             return response.json();
         }).then(data => {
             console.debug('data : ');
@@ -140,6 +171,7 @@ class ChapitreContainer extends Component {
                                 isPlayerVisible={this.state.isPlayerDisplayed}
                             ></BurgerMenu>
                             <Player
+                                videoUrl={this.state.articles[this.state.index].videoUrl}
                                 hidePlayer={this.hidePlayer}
                                 isPlayerVisible={this.state.isPlayerDisplayed}
                                 iFrameHeight={this.state.height.toString()}
@@ -157,8 +189,8 @@ class ChapitreContainer extends Component {
                             <ChapitreContent
                                 articleTitle1={this.state.articles[this.state.index].content[0].title}
                                 articleContent1={this.state.articles[this.state.index].content[0].text}
-                                articleTitle2={this.state.articles[this.state.index].content[1].title}
-                                articleContent2={this.state.articles[this.state.index].content[1].text}
+                                articleTitle2={this.state.articles[this.state.index].content.length > 1 ? this.state.articles[this.state.index].content[1].title : null}
+                                articleContent2={this.state.articles[this.state.index].content.length > 1 ? this.state.articles[this.state.index].content[1].text : null}
                             ></ChapitreContent>
                             <ChapitreFooter
                                 index={this.state.index}
