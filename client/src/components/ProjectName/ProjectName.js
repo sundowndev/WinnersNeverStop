@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ProjectName = ({ categories, isLoading }) => (
-    <p className="title"><strong>#Winners</strong>NeverStop</p>
+    <div className="title"><a href="/"><img src="/assets/img/WINNERS_NEVER_STOP-white.png" alt="title"></img></a></div>
 );
 
 export default ProjectName

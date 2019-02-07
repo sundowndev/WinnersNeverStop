@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Grid from '../../components/Grid/Grid';
 
-const BurgerMenu = ({open, toggleState, imgUrl, index, incrementIndex, decrementIndex}) => (
+const BurgerMenu = ({open, toggleState, imgUrl, index, title, incrementIndex, decrementIndex, isPlayerVisible}) => (
     <section className="BurgerMenu">
         {!open &&
-            <div className="svgContainer">
-                <div className="icon" onClick={toggleState}>
+            <div className={isPlayerVisible ? "svgContainer button": "svgContainer"} onClick={toggleState}>
+                <div className="icon">
                     <svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1">
                         <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                             <g id="Chapitre-Open" transform="translate(-1333.000000, -93.000000)" fill="#FAFAFA">
@@ -50,7 +50,7 @@ const BurgerMenu = ({open, toggleState, imgUrl, index, incrementIndex, decrement
                                     <span className="index">0{index + 1}</span>
                                     <img onClick={incrementIndex} className="arrowDown" src="/assets/img/arrow-down.svg" alt="arrow down"></img>
                                 </div>
-                                <span className="title">title placeholder</span>
+                                <span className="title">{title}</span>
                             </div>
                             <div className="barres">
                                 <hr className={index === 0 ? 'index1 active': 'index1'}></hr>
@@ -61,9 +61,15 @@ const BurgerMenu = ({open, toggleState, imgUrl, index, incrementIndex, decrement
                     </div>
                     
                 </div>
-                <a className="link" href="/about">
-                    A propos
-                </a>
+                <div className="link">
+
+                    <a className="first" href="/about">
+                        A propos
+                    </a>
+                    <a href="/credits">
+                        credits
+                    </a>
+                </div>
             </div>
         }
     </section>
@@ -74,8 +80,10 @@ BurgerMenu.propTypes = {
     toggleState: PropTypes.func.isRequired,
     imgUrl: PropTypes.object.isRequired,
     index: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
     incrementIndex: PropTypes.func.isRequired,
     decrementIndex: PropTypes.func.isRequired,
+    isPlayerVisible: PropTypes.bool.isRequired,
 }
 
 

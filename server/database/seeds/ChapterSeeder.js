@@ -17,7 +17,7 @@ class ChapterSeeder {
   async run() {
     const usersArray = await Factory
       .model('App/Models/Chapter')
-      .createMany(5)
+      .createMany(3)
     console.log(usersArray);
   }
 }
