@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Grid from '../../components/Grid/Grid';
 import { Link } from 'react-scroll'
 
-const Chapitre = ({title, imgUrl}) => (
+const Chapitre = ({title, imgUrl, displayPlayer}) => (
     <section className="ChapitreMenu" style={imgUrl}>
         <Grid></Grid>
         <div className="header">
@@ -15,11 +15,9 @@ const Chapitre = ({title, imgUrl}) => (
         </div>
         <div className="userInteraction">
             <div className="buttonSection">
-                <Link activeClass="active" className="test1" to="video" spy={true} smooth={true} duration={500} >
-                    <div className="button firstButton">
-                        <img src="/assets/img/music-player-play.svg" className="play" alt="play button"></img>
-                    </div>
-                </Link>
+                <div className="button firstButton" onClick={displayPlayer}>
+                    <img src="/assets/img/music-player-play.svg" className="play" alt="play button"></img>
+                </div>
                 <span className="description">Voir la vidéo</span>
             </div>
             <div className="buttonSection">
@@ -36,7 +34,8 @@ const Chapitre = ({title, imgUrl}) => (
 
 Chapitre.propTypes = {
     title: PropTypes.string.isRequired,
-    imgUrl: PropTypes.object.isRequired
+    imgUrl: PropTypes.object.isRequired,
+    displayPlayer: PropTypes.func.isRequired
     // index: PropTypes.number.isRequired
 }
 

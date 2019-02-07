@@ -1,4 +1,4 @@
-.PagePropos {
+.PageCredit {
   height: 100vh;
   background-image: url("../assets/img/BackgroundPropos.jpg");
   background-position: center;
@@ -11,8 +11,8 @@
       padding: 4% 6%;
     }
   }
-  .apropos {
-    padding: 18vh 28vw 0;
+  .credit {
+    padding: 25vh 28vw 0;
 
     .title {
       font-family: "Roboto Bold";
@@ -37,8 +37,8 @@
   }
 };
 @media screen and (min-width: 200px) and (max-width: 600px) {
-  .PagePropos {
-    .apropos {
+  .PageCredit {
+    .credit {
       padding: 15vh 15vw 0;
     }
   }

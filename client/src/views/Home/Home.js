@@ -17,7 +17,7 @@ const Home = ({ whiteSpace, checkHoldLvl }) => (
                 <div className="button"onMouseUp={checkHoldLvl}>
                     <div ref={whiteSpace} className="white-space"></div>
                 </div>
-                <span className="description">Hold to discover</span>
+                <span className="description">Maintenez pour découvrir</span>
             </div>
         </div>
         <div className="footer">
