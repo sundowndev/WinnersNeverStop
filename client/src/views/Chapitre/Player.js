@@ -15,8 +15,8 @@ const Player = ({isPlayerVisible, iFrameWidth, iFrameHeight, hidePlayer, videoUr
                         width={iFrameWidth}
                         height={iFrameHeight}
                         sandbox="allow-same-origin allow-scripts"
-                        src="https://peertube.social/videos/embed/43c97e8b-5762-4bcd-b6eb-3686b98e2e0c"
-                        // src={videoUrl}
+                        // src="https://peertube.social/videos/embed/43c97e8b-5762-4bcd-b6eb-3686b98e2e0c"
+                        src={videoUrl}
                         frameBorder="0"
                         allowFullScreen
                     ></iframe>
