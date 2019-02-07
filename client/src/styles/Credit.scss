@@ -1,45 +1,98 @@
 .PageCredit {
   height: 100vh;
-  background-image: url("../assets/img/BackgroundPropos.jpg");
+  background-image: url("../assets/img/credits.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 
-  .header {
-    .title {
-      padding: 4% 6%;
-    }
+  .ContainerPageCredit {
+    padding: 20vh 5vw 0;
   }
-  .credit {
-    padding: 25vh 28vw 0;
+
+  .ContainerFlex {
+    display: flex;
+  }
+
+  .DesignerBlock {
+    padding-bottom: 15vh;
+    min-width: 45vw;
 
     .title {
       font-family: "Roboto Bold";
       font-weight: bold;
-      font-size: 60px;
+      font-size: 40px;
       line-height: 35px;
-      margin-bottom: 70px;
+      margin-bottom: 40px;
     }
 
     .introDescription {
       font-family: "Roboto Light";
-      font-size: 15px;
+      font-size: 16px;
       line-height: 26px;
     }
+  }
 
-    .introDescriptionSecond {
+  .DeveloperBlock {
+    padding-bottom: 10vh;
+    .title {
+      font-family: "Roboto Bold";
+      font-weight: bold;
+      font-size: 40px;
+      line-height: 35px;
+      margin-bottom: 20px;
+    }
+
+    .introDescription {
       font-family: "Roboto Light";
-      margin-top: 30px;
-      font-size: 15px;
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+
+  .RemerciementBlock {
+    .title {
+      font-family: "Roboto Bold";
+      font-weight: bold;
+      font-size: 40px;
+      line-height: 35px;
+      margin-bottom: 40px;
+    }
+
+    .introDescription {
+      font-family: "Roboto Light";
+      width: 75%;
+      font-size: 16px;
       line-height: 26px;
     }
   }
 };
-@media screen and (min-width: 200px) and (max-width: 600px) {
+
+@media screen and (min-width: 100px) and (max-width: 700px) {
   .PageCredit {
-    .credit {
-      padding: 15vh 15vw 0;
+    text-align: left;
+
+    .ContainerPageCredit {
+      .DeveloperBlock {
+        padding-bottom: 50px;
+      }
+
+      .ContainerFlex {
+        display: block;
+
+        .DesignerBlock {
+          padding-bottom: 50px;
+        }
+
+        .RemerciementBlock {
+          padding-bottom: 50px;
+          .introDescription {
+            width: auto;
+            // padding-left: 60px;
+            // padding-right: 60px;
+          }
+        }
+      }
     }
   }
 };
