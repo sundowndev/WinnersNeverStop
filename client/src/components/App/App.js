@@ -4,6 +4,7 @@ import HomeContainer from '../../views/Home/HomeContainer';
 import IntroductionContainer from '../../views/Introduction/IntroductionContainer';
 import ChapitresContainer from '../../views/Chapitres/ChapitresContainer';
 import Propos from '../../views/APropos/Propos.js';
+import Credit from '../../views/Credit/Credit.js';
 import './App.css';
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
             <Route exact path='/introduction' component={IntroductionContainer} />
             <Route exact path='/chapitres' component={ChapitresContainer} />
             <Route exact path='/propos' component={Propos} />
+            <Route exact path='/credit' component={Credit} />
           </div>
         </Router>
       </div>

@@ -13,8 +13,4 @@ const Propos = ({ whiteSpace, checkHoldLvl }) => (
 </section>
 );
 
-// <div className="footer">
-//
-// </div>
-
 export default Propos;
