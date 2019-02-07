@@ -85,45 +85,37 @@ class ChapitreContainer extends Component {
     generateStyleBackgroundImage = () => {
         // TODO get routes from api when it will be setted, for now blueBitmap is considered as placeholder
 
-        return { backgroundImage: 'url("/assets/img/blueBitmap.png")'};
+        return { backgroundImage: `url("/assets/img/${this.state.articles[this.state.index].thumbUrl}")`};
     }
-    generateIntroPicture = () => {
-        return { backgroundImage: 'url("/assets/img/chapter2.png")'}
+    generatePicture = () => {
+        return { backgroundImage: `url("/assets/img/${this.state.articles[this.state.index].content[0].thumbUrl}")`};
     }
     toggleBurgerState = () => {
         let id = null;
+        const wheel = (event) => {
+            window.clearTimeout(id);
+            id = window.setTimeout(() => {
+                if (event.deltaY < 0) {
+                    this.decrementIndex();
+                }
+                else {
+                    this.incrementIndex();
+                }
+            }, 60)
+        }
         if (this.state.burgerState) {
+            document.querySelector('body').style.overflow = "auto";
+            document.querySelector('.currentChapter').removeEventListener('wheel', wheel, true);
             this.setState({
                 burgerState: false
-            })
-            document.querySelector('body').style.overflow = "auto";
-            window.removeEventListener('wheel', (event) => {
-                window.clearTimeout(id);
-                id = window.setTimeout(() => {
-                    if (event.deltaY < 0) {
-                        this.decrementIndex();
-                    }
-                    else {
-                        this.incrementIndex();
-                    }
-                })
             })
         }
         else {
             this.setState({
                 isPlayerDisplayed: false,
                 burgerState: true
-            })
-            window.addEventListener('wheel', (event) => {
-                window.clearTimeout(id);
-                id = window.setTimeout(() => {
-                    if (event.deltaY < 0) {
-                        this.decrementIndex();
-                    }
-                    else {
-                        this.incrementIndex();
-                    }
-                }, 60)
+            }, () => {
+                document.querySelector('.currentChapter').addEventListener('wheel', wheel, true);
             })
             document.querySelector('body').style.overflow = "hidden";
         }
@@ -209,6 +201,7 @@ class ChapitreContainer extends Component {
                                 player={this.state.players[this.state.index]}
                             ></ChapitreIntro>
                             <ChapitreContent
+                                picture1={this.generatePicture()}
                                 articleTitle1={this.state.articles[this.state.index].content[0].title}
                                 articleContent1={this.state.articles[this.state.index].content[0].text}
                                 articleTitle2={this.state.articles[this.state.index].content.length > 1 ? this.state.articles[this.state.index].content[1].title : null}

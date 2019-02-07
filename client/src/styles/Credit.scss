@@ -5,6 +5,22 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  .header {
+    .arrowContainer {
+        position: absolute;
+        top: calc(4vw - 20px);
+        left: calc(6vw - 20px);
+        z-index: 3;
+        background-color: rgba(11, 22, 54, 0.3);
+        padding: 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        .arrowBack {
+            margin-left: -3px;
+            transform: rotate(90deg);
+        }
+    }
+  }
 
   .ContainerPageCredit {
     padding: 20vh 6vw 0;
@@ -71,6 +87,7 @@
 @media screen and (min-width: 100px) and (max-width: 700px) {
   .PageCredit {
     text-align: left;
+    height: auto;
 
     .ContainerPageCredit {
       .DeveloperBlock {

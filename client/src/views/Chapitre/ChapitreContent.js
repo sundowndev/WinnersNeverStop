@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import Grid from '../../components/Grid/Grid';
 
 
-const ChapitreContent = ({articleTitle1, articleContent1, articleTitle2, articleContent2}) => (
+const ChapitreContent = ({articleTitle1, articleContent1, articleTitle2, articleContent2, picture1}) => (
     <section className="ChapitreContent">
         <Grid></Grid>
         <div className="dualContent">
             <div className="articlePicture">
-                <div className="greyPlaceholderForPicture"></div>
+                <div className="greyPlaceholderForPicture" style={picture1}></div>
             </div>
             <div className="articleOne">
                 <p className="title">{articleTitle1}</p>
@@ -24,6 +24,7 @@ const ChapitreContent = ({articleTitle1, articleContent1, articleTitle2, article
 );
 
 ChapitreContent.propTypes = {
+    picture1: PropTypes.object.isRequired,
     articleTitle1: PropTypes.string.isRequired,
     articleContent1: PropTypes.string.isRequired,
     articleTitle2: PropTypes.string.isRequired,
