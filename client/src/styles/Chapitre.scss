@@ -70,7 +70,10 @@
 }
 
 .ChapitreIntro {
-    height: 100vh;
+    height: 80vh;
+    @media screen and (max-width: 800px) {
+        height: 40vh;
+    }
     @media screen and (max-width: 400px) {
         height: 80vh;
     }
@@ -186,9 +189,45 @@
             }
         }
     }
+    .articleList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .article {
+            width: 34vw;
+            padding: 6vw;
+        }
+
+        .article:nth-child(odd) {
+            padding-right: 10vw;
+            // text-align: right;
+        }
+        .article:nth-child(even) {
+            padding-left: 0;
+            padding-right: 10vw;
+            width: 40vw;
+            // text-align: right;
+        }
+        @media screen and (max-width: 700px) {
+            .article {
+                padding: 6vw;
+                width: 66vw;
+            }
+            .article:nth-child(odd) {
+                padding-right: 6vw;
+                // text-align: right;
+            }
+            .article:nth-child(even) {
+                padding-left: 6vw;
+                padding-right: 6vw;
+                width: 66vw;
+                // text-align: right;
+            }
+        }
+    }
     .articleTwo {
         padding: 6vw;
-        width: 44vw;
+        width: 40vw;
         margin-top: -100px;
         @media screen and (max-width: 400px) {
             margin-top: 0;
