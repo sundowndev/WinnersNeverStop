@@ -44,7 +44,7 @@ class Credit extends Component {
 
             <div className="RemerciementBlock">
                 <p className="title">Remerciement</p>
-                <p className="introDescription">The texos De Finibusm (On the Ends of Goods and Evils, or alternatively the Purposes of Good and Evit, consectetur, adipisci velit  translation Neither is there anyone who loves grief itself since.</p>
+                <p className="introDescription">Nous remercions HLTV.org pour les photos ainsi que Mr. Pumir et Mme Langlet pour le suivi de ce projet. Nous remercions également tous les joueurs ou passionnés qui nous ont aidés et qui se sont investis. (Speedself, iDex, Shuh, Jordan Savelli, Zuper, Emerald, Next,..)</p>
             </div>
             </div>
 
