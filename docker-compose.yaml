@@ -43,8 +43,8 @@ services:
       dockerfile: Dockerfile
     environment:
       - NODE_ENV=production
-    ports:
-      - "3000:3000"
+    # ports:
+    #  - "3000:3000"
     networks:
       - default
       - postgres
@@ -53,8 +53,8 @@ services:
       - "traefik.docker.network=web"
       - "traefik.enable=true"
       - "traefik.domain=api.winnersnevers.top"
-      - "traefik.frontend.rule=Host:api.winnersnevers.top"
-      - "traefik.port=80"
+      - "traefik.backend.rule=Host:api.winnersnevers.top"
+      - "traefik.port=3000"
       - "traefik.protocol=http"
 
   nginx:
