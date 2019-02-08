@@ -199,7 +199,8 @@
         }
 
         .article:nth-child(odd) {
-            padding-right: 10vw;
+            padding-right: 0vw;
+            padding-left: 6vw;
             // text-align: right;
         }
         .article:nth-child(even) {
