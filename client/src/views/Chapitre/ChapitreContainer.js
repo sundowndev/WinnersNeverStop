@@ -85,10 +85,10 @@ class ChapitreContainer extends Component {
     generateStyleBackgroundImage = () => {
         // TODO get routes from api when it will be setted, for now blueBitmap is considered as placeholder
 
-        return { backgroundImage: `url("/assets/img/${this.state.articles[this.state.index].thumbUrl}")`};
+        return { backgroundImage: `url("/images/chapters/${this.state.articles[this.state.index].thumbUrl}")`};
     }
     generatePicture = () => {
-        return { backgroundImage: `url("/assets/img/${this.state.articles[this.state.index].content[0].thumbUrl}")`};
+        return { backgroundImage: `url("/images/chapters/${this.state.articles[this.state.index].content[0].thumbUrl}")`};
     }
     toggleBurgerState = () => {
         let id = null;
@@ -167,6 +167,11 @@ class ChapitreContainer extends Component {
             this.props.history.push(`/article/${this.state.index + 1}`)
         });
     }
+    getOtherArticles = () => {
+        let allArticles = this.state.articles[this.state.index].content.slice(1, this.state.articles.length);
+        console.debug(allArticles);
+        return allArticles;
+    } 
     render() {
         if (this.state.articles.length) {
             return (
@@ -206,6 +211,7 @@ class ChapitreContainer extends Component {
                                 articleContent1={this.state.articles[this.state.index].content[0].text}
                                 articleTitle2={this.state.articles[this.state.index].content.length > 1 ? this.state.articles[this.state.index].content[1].title : null}
                                 articleContent2={this.state.articles[this.state.index].content.length > 1 ? this.state.articles[this.state.index].content[1].text : null}
+                                otherArticles={this.getOtherArticles()}
                             ></ChapitreContent>
                             <ChapitreFooter
                                 index={this.state.index}

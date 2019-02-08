@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Grid from '../../components/Grid/Grid';
 
 
-const ChapitreContent = ({articleTitle1, articleContent1, articleTitle2, articleContent2, picture1}) => (
+const ChapitreContent = ({articleTitle1, articleContent1, articleTitle2, articleContent2, picture1, otherArticles}) => (
     <section className="ChapitreContent">
         <Grid></Grid>
         <div className="dualContent">
@@ -15,9 +15,13 @@ const ChapitreContent = ({articleTitle1, articleContent1, articleTitle2, article
                 <p className="content">{articleContent1}</p>
             </div>
         </div>
-        <div className="articleTwo">
-            <p className="title">{articleTitle2}</p>
-            <p className="content">{articleContent2}</p>
+        <div className="articleList">
+            {otherArticles.map(article => 
+                <div className="article">
+                    <p className="title">{article.title}</p>
+                    <p className="content">{article.text}</p>
+                </div>
+            )}
         </div>
         <div className="anchor"></div>
     </section>
@@ -29,6 +33,7 @@ ChapitreContent.propTypes = {
     articleContent1: PropTypes.string.isRequired,
     articleTitle2: PropTypes.string.isRequired,
     articleContent2: PropTypes.string.isRequired,
+    otherArticles: PropTypes.array.isRequired
 }
 
 
