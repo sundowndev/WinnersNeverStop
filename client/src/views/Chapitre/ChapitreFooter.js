@@ -6,7 +6,7 @@ const ChapitreFooter = ({index, decrementIndex, incrementIndex}) => (
     <section className="ChapitreFooter">
         <div className="footerButtons">
             <div className="user-interaction left">
-                <Link activeClass="active" to="chapter" spy={true} smooth={true} duration={500}>
+                <Link activeClass="active" to="video" spy={true} smooth={true} duration={500}>
                     <div onClick={decrementIndex} className="button">
                         <img src="/assets/img/arrow-down.svg" className="arrowLeft" alt="flêche vers la gauche"></img>
                     </div>
@@ -14,7 +14,7 @@ const ChapitreFooter = ({index, decrementIndex, incrementIndex}) => (
                 <span className="description">chapitre précédent</span>
             </div>
             <div className="user-interaction right">
-                <Link activeClass="active" to="chapter" spy={true} smooth={true} duration={500}>
+                <Link activeClass="active" to="video" spy={true} smooth={true} duration={500}>
                     <div onClick={incrementIndex} className="button">
                         <img src="/assets/img/arrow-down.svg" className="arrowRight" alt="flêche vers la droite"></img>
                     </div>

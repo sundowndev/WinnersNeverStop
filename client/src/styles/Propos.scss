@@ -6,6 +6,7 @@
   background-size: cover;
   position: relative;
   @media screen and (max-width: 400px) {
+    min-height: 100vh;
     height: auto;
   }
   .header {
@@ -25,7 +26,7 @@
     }
   }
   .apropos {
-    padding: 18vh 28vw 0;
+    padding: 28vh 28vw 0;
 
     .title {
       font-family: "Roboto Bold";
